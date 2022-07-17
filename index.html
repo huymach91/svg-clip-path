@@ -8,10 +8,29 @@
     <script>
       var draw = SVG().addTo('body').size(500, 500);
       var image1 = draw.image(
-        'https://raw.githubusercontent.com/huymach91/svg-clip-path/main/images/SeaHorseOriginal.jpg?token=GHSAT0AAAAAABTUPOOBDZLKEQVYTQRGL7OOYWTNPOQ'
+        'images/'
       );
-      var image2 = draw.image(
-        'https://raw.githubusercontent.com/huymach91/svg-clip-path/main/images/SeaHorseXray.jpg?token=GHSAT0AAAAAABTUPOOBV7QCRQHF3ZTK6NC2YWTNQBQ'
+      var image2 = draw
+        .image(
+          'https://raw.githubusercontent.com/huymach91/svg-clip-path/main/images/SeaHorseXray.jpg?token=GHSAT0AAAAAABTUPOOBXEWHNVEUYYQSPPLIYWTPHAA'
+        )
+        .css('display', 'none');
+      var ellipse = draw
+        .ellipse(40, 40)
+        .move(10, 10)
+        .attr({ stroke: 'red', fill: 'none', width: 1 });
+
+      var clip = draw.clip().add(ellipse);
+
+      // var image2.clipWith(clip);
+
+      window.addEventListener(
+        'mousemove',
+        function (e) {
+          ellipse.attr('cx', e.pageX);
+          ellipse.attr('cy', e.pageY);
+        },
+        false
       );
     </script>
   </body>
