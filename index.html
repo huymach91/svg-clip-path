@@ -6,14 +6,16 @@
   </head>
   <body>
     <script>
-      var draw = SVG().addTo('body').size(500, 500);
+      var draw = SVG().addTo('body').size(1500, 1500);
 
       var image1 = draw.image(
         'https://github.com/huymach91/svg-clip-path/blob/main/images/SeaHorseOriginal.jpg?raw=true'
       );
-      var image2 = draw.image(
-        'https://raw.githubusercontent.com/huymach91/svg-clip-path/main/images/SeaHorseXray.jpg'
-      );
+      var image2 = draw
+        .image(
+          'https://raw.githubusercontent.com/huymach91/svg-clip-path/main/images/SeaHorseXray.jpg'
+        )
+        .move(0, 0);
 
       var r = 50;
       var ellipse = draw
